@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+"""Module that prints text with indentation."""
+
+
+def text_indentation(text):
+    """Print text with 2 new lines after ., ? and :"""
+
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
+
+    start = 0
+
+    for i, c in enumerate(text):
+        if c in ".?:":
+            print(text[start:i + 1].strip())
+            print()
+            start = i + 1
+
+    if start < len(text):
+        print(text[start:].strip(), end="")
