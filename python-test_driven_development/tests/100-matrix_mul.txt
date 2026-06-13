@@ -28,3 +28,8 @@ The ``matrix_mul`` function
     Traceback (most recent call last):
     ...
     TypeError: m_a should contain only integers or floats
+
+    >>> matrix_mul("hello", [[1]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list
