@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for lazy matrix multiplication."""
+"""Module that multiplies matrices using NumPy."""
 
 import numpy as np
 
