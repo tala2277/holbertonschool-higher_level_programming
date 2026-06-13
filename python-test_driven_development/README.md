@@ -1,5 +1,7 @@
-# Python Test Driven Development
+# Python - Test Driven Development
 
-This project covers test driven development in Python,
-including doctests, documentation, unit testing,
-and edge case handling.
+This project contains exercises about Test Driven Development (TDD) in Python.
+
+## Tasks
+
+0. Integers addition
