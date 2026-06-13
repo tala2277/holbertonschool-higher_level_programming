@@ -48,3 +48,8 @@ The ``matrix_mul`` function
     Traceback (most recent call last):
     ...
     TypeError: m_b must be a list of lists
+
+    >>> matrix_mul([[1, 2]], [["a"], ["b"]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b should contain only integers or floats
