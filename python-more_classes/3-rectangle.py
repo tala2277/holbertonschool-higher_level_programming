@@ -20,10 +20,8 @@ class Rectangle:
         """Set the width."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-
         if value < 0:
             raise ValueError("width must be >= 0")
-
         self.__width = value
 
     @property
@@ -36,10 +34,8 @@ class Rectangle:
         """Set the height."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-
         if value < 0:
             raise ValueError("height must be >= 0")
-
         self.__height = value
 
     def area(self):
@@ -50,14 +46,14 @@ class Rectangle:
         """Return the rectangle perimeter."""
         if self.__width == 0 or self.__height == 0:
             return 0
-
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return the rectangle using # characters."""
+        """Return string representation of the rectangle."""
         if self.__width == 0 or self.__height == 0:
             return ""
 
         return "\n".join(
-            ["#" * self.__width for i in range(self.__height)]
+            "#" * self.__width
+            for _ in range(self.__height)
         )
