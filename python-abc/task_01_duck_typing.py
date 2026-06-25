@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for Shape abstract class and duck typing."""
+"""Shape abstract class, Circle, Rectangle and duck typing."""
 
 from abc import ABC, abstractmethod
 from math import pi
@@ -17,25 +17,25 @@ class Shape(ABC):
 
 class Circle(Shape):
     def __init__(self, radius):
-        self.radius = abs(radius)
+        self.radius = radius
 
     def area(self):
-        return pi * (self.radius ** 2)
+        return pi * (abs(self.radius) ** 2)
 
     def perimeter(self):
-        return 2 * pi * self.radius
+        return 2 * pi * abs(self.radius)
 
 
 class Rectangle(Shape):
     def __init__(self, width, height):
-        self.width = abs(width)
-        self.height = abs(height)
+        self.width = width
+        self.height = height
 
     def area(self):
-        return self.width * self.height
+        return abs(self.width) * abs(self.height)
 
     def perimeter(self):
-        return 2 * (self.width + self.height)
+        return 2 * (abs(self.width) + abs(self.height))
 
 
 def shape_info(shape):
