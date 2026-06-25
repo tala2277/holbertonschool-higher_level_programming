@@ -1,0 +1,8 @@
+
+>>> empty = MyList()
+>>> print(empty)
+[]
+>>> empty.print_sorted()
+[]
+>>> print(empty)
+[]
