@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-"""Script that parses logs from stdin and computes metrics."""
+"""Script that reads stdin line by line and computes metrics."""
 
 import sys
 
-total_size = 0
-line_count = 0
 status_codes = {
     "200": 0,
     "301": 0,
@@ -16,17 +14,21 @@ status_codes = {
     "500": 0
 }
 
+total_size = 0
+line_count = 0
+
 
 def print_stats():
-    """Print the collected statistics."""
+    """Print accumulated statistics."""
     print("File size: {}".format(total_size))
     for code in sorted(status_codes.keys()):
-        if status_codes[code]:
+        if status_codes[code] != 0:
             print("{}: {}".format(code, status_codes[code]))
 
 
 try:
     for line in sys.stdin:
+        line_count += 1
         parts = line.split()
 
         try:
@@ -37,7 +39,6 @@ try:
         except (ValueError, IndexError):
             pass
 
-        line_count += 1
         if line_count % 10 == 0:
             print_stats()
 
