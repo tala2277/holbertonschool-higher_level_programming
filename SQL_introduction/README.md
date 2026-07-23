@@ -1,12 +1,6 @@
 # SQL Introduction
 
-This project contains SQL scripts for learning MySQL fundamentals.
+This project contains SQL scripts for learning the basics of MySQL.
 
-## Tasks
-- List databases
-- Create databases
-- Create tables
-- Insert data
-- Update data
-- Delete data
-- Query data
+## Author
+Holberton School
