@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""Displays all states matching the provided name."""
+"""Lists states matching the given name."""
 
 import MySQLdb
 import sys
-
 
 if __name__ == "__main__":
     db = MySQLdb.connect(
@@ -18,11 +17,12 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     cur.execute(
-        "SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC"
-        .format(sys.argv[4])
+        "SELECT * FROM states WHERE BINARY name = %s ORDER BY id ASC",
+        (sys.argv[4],)
     )
 
     rows = cur.fetchall()
+
     for row in rows:
         print(row)
 
