@@ -1,1 +1,1 @@
-# SQL_more_queries
+# Python - Object-relational mapping
