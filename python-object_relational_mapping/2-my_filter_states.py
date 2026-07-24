@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Displays all states matching the given name."""
+"""Display all states matching the given name."""
 
-import sys
 import MySQLdb
+import sys
 
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(
+    conn = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=sys.argv[1],
@@ -15,16 +15,14 @@ if __name__ == "__main__":
         charset="utf8"
     )
 
-    cur = db.cursor()
-    cur.execute(
-        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
-            sys.argv[4]
-        )
+    cur = conn.cursor()
+    sql = "SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC".format(
+        sys.argv[4]
     )
+    cur.execute(sql)
 
-    states = cur.fetchall()
-    for state in states:
+    for state in cur.fetchall():
         print(state)
 
     cur.close()
-    db.close()
+    conn.close()
