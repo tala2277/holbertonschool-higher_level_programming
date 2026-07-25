@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-Contains the class definition of a City.
+Contains the class definition of a City for relationship.
 """
-from model_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
+from relationship_state import Base
 
 
 class City(Base):
     """
-    City class mapped to the cities table in MySQL database.
+    City class mapped to cities table in MySQL.
     """
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)

@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
-Script that prints all City objects from the database hbtn_0e_14_usa.
+Lists all City objects with their corresponding State objects.
 """
 import sys
-from model_state import Base, State
-from model_city import City
+from relationship_state import Base, State
+from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -19,14 +19,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    results = (
-        session.query(State, City)
-        .filter(State.id == City.state_id)
-        .order_by(City.id.asc())
-        .all()
-    )
+    cities = session.query(City).order_by(City.id.asc()).all()
 
-    for state, city in results:
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+    for city in cities:
+        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
 
     session.close()
