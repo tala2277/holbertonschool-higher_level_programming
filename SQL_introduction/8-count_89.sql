@@ -1,3 +1,2 @@
--- Counts the records with id = 89 in the table first_table.
-SELECT COUNT(*) FROM first_table
-WHERE id = 89;
+-- Counts records with id 89 in first_table
+SELECT COUNT(*) FROM first_table WHERE id = 89;
