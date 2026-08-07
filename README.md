@@ -1,2 +1,11 @@
--- Lists all cities contained in hbtn_0d_usa using JOIN
-SELECT cities.id, cities.name, states.name FROM cities JOIN states ON cities.state_id = states.id ORDER BY cities.id ASC;
+-- Creates a table second_table in the database hbtn_0c_0 and adds multiple rows
+CREATE TABLE IF NOT EXISTS second_table (
+    id INT,
+    name VARCHAR(256),
+    score INT
+);
+INSERT INTO second_table (id, name, score) VALUES
+(1, "John", 10),
+(2, "Alex", 3),
+(3, "Bob", 14),
+(4, "George", 8);
