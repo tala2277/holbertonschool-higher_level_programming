@@ -1,6 +1,12 @@
 const toggleHeader = document.querySelector('#toggle_header');
-toggleHeader.onclick = function () {
-  const header = document.querySelector('header');
-  header.classList.toggle('red');
-  header.classList.toggle('green');
-};
+const header = document.querySelector('header');
+
+toggleHeader.addEventListener('click', function () {
+  if (header.classList.contains('red')) {
+    header.classList.remove('red');
+    header.classList.add('green');
+  } else {
+    header.classList.remove('green');
+    header.classList.add('red');
+  }
+});
